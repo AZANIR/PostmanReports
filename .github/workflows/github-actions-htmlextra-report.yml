@@ -33,8 +33,9 @@ jobs:
 
     # Upload the contents of Test Results directory to workspace
       - name: Output the run Details
-        uses: actions/upload-artifact@v2
-        with: 
+        uses: actions/upload-artifact@v1
+        if: always()
+        with:
           name: RunReports
           path: testResults
       - name: Deploy report
